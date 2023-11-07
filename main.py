@@ -6,8 +6,12 @@ from documentations.tags import tags_metadata
 
 
 # Import des routers
-import routers.routers_leagues
-import routers.routers_matches
+import routers.router_leagues
+import routers.router_matches
+import routers.router_auth
+import routers.router_stripe
+
+
 
 #Lancement de l'API
 app = FastAPI(
@@ -17,5 +21,7 @@ app = FastAPI(
 )
 
 # Routers dédiés
-app.include_router(routers.routers_leagues.router)
-app.include_router(routers.routers_matches.router)
+app.include_router(routers.router_leagues.router)
+app.include_router(routers.router_matches.router)
+app.include_router(routers.router_auth.router)
+app.include_router(routers.router_stripe.router)

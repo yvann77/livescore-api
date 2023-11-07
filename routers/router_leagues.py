@@ -8,10 +8,10 @@ router = APIRouter(
 
 
 leagues = [
-    League(name="Premier League", matchs = [
-    {"équipe_domicile": "Aston Villa", "équipe_visiteuse": "Tottenham"},{"équipe_domicile": "Arsenal", "équipe_visiteuse": "Manchester City"},]),
-    League(name="Ligue 1", matchs=[{"équipe_domicile": "Lorient","équipe_visiteuse": "Rennes",},{"équipe_domicile": "Toulouse","équipe_visiteuse": "Reims"},]),
-    League(name="Liga", matchs=[{ "équipe_domicile": "Villarreal","équipe_visiteuse": "UD Las Palmas",},{"équipe_domicile": "Atlético Madrid","équipe_visiteuse": "Real Sociedad",},])
+    League(name="Premier League", country = "Angleterre"),
+    League(name="Ligue 1", country = "France"),
+    League(name="Liga",country = "Espagne"),
+    League(name="Bundesliga", country = "Allemagne")
 ]
 
 @router.get("/leagues", tags=["Leagues"])
@@ -21,7 +21,7 @@ async def get_leagues():
 
 @router.post('/leagues', tags=["Leagues"])
 async def create_league(givenLeague:LeagueNoID):
-    newLeague= League(givenLeague)
+    newLeague = League(name = givenLeague.name, country= givenLeague.country)
     leagues.append(newLeague)
     return newLeague
 
@@ -29,7 +29,7 @@ async def create_league(givenLeague:LeagueNoID):
 @router.patch('/leagues/{name}')
 async def modify_league(name:str, modifiedLeague:LeagueNoID):
     for league in leagues : 
-        if league.name == name and league.matchs == modifiedLeague.matchs:
+        if league.name == name and league.country == modifiedLeague.country:
             league.name = modifiedLeague.name      
             return league
     raise HTTPException(status_code= 404, detail="League not found")

@@ -3,25 +3,31 @@ from typing import List
 
 class League(BaseModel):
     name: str
-    matchs: List[dict]  
+    country: str
 
 # No IDs for POST requests   
 class LeagueNoID(BaseModel):
-    name:str
-    matchs: List[dict] 
+    name: str
+    country: str
 
 class Match(BaseModel):
-    équipe_domicile: str
-    équipe_extérieure: str
+    id : str
+    equipe_domicile: str
+    equipe_exterieure: str
     score_domicile: int
-    score_extérieur: int
-    statut: str
+    score_exterieur: int
+    statut : str
     minute: int
 
 class MatchNoID(BaseModel):
-    équipe_domicile: str
-    équipe_extérieure: str
+    equipe_domicile: str
+    equipe_exterieure: str
+    score_domicile: int
+    score_exterieur: int
+    statut : str
+    minute: int
 
-class Match(MatchNoID):
-    id: str
+class User(BaseModel):
+    email:str
+    password: str
     
