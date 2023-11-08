@@ -9,6 +9,10 @@ tags_metadata = [
         "description": "The matches endpoint provides live scores, and other information for upcoming and ongoing matches.",
     },
     {
+        "name": "Standings",
+        "description": "The Standings endpoint provides standing by team, and other information for a team.",
+    },
+    {
         "name": "Auth",
         "description": "The authentication endpoint is used to obtain an access token that is required to access the API.",
     },

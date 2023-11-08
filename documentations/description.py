@@ -9,6 +9,10 @@ You will be able to :
 You will be able to : 
 * Get live scores, and other information for upcoming and ongoing matches.
 
+## Standings
+You will be able to : 
+* Get Standings per team, and other information for teams.
+
 ## Auth
 You will be able to : 
 * Obtain an access token that is required to access the API.
@@ -16,5 +20,6 @@ You will be able to :
 ## Stripe
 You will be able to : 
 * Checkout via Stripe for access to the API.
+2. Laisser vous rediriger sur le lien du [checkout](/stripe/checkout) 
 
 """

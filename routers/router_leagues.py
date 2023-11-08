@@ -8,6 +8,7 @@ router = APIRouter(
 
 
 leagues = [
+    League(name="Champions League", country = "UEFA"),
     League(name="Premier League", country = "Angleterre"),
     League(name="Ligue 1", country = "France"),
     League(name="Liga",country = "Espagne"),

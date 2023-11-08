@@ -30,4 +30,32 @@ class MatchNoID(BaseModel):
 class User(BaseModel):
     email:str
     password: str
-    
+
+class Standing(BaseModel):
+    id: str
+    name: str
+    competition: str
+    wins: int
+    losses: int
+    draws: int
+    points: int
+    place : str
+
+class StandingNoID(BaseModel):
+    name: str
+    competition: str
+    wins: int
+    losses: int
+    draws: int
+    points: int
+    place : str
+
+
+
+class StandingNoName(BaseModel):
+    competition: str
+    wins: int
+    losses: int
+    draws: int
+    points: int
+    place : str
