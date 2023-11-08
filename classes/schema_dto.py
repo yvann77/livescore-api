@@ -16,6 +16,7 @@ class Match(BaseModel):
     equipe_exterieure: str
     score_domicile: int
     score_exterieur: int
+    competition: str
     statut : str
     minute: int
 
@@ -24,6 +25,7 @@ class MatchNoID(BaseModel):
     equipe_exterieure: str
     score_domicile: int
     score_exterieur: int
+    competition: str
     statut : str
     minute: int
 
